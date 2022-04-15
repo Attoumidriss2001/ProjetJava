@@ -1,0 +1,192 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    Error:
+    Python:
+    Php:
+    Html:
+    Java:
+    Sql:
+    Css:
+
+<MainWindow>:
+    name:"main"
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:3
+            Label:
+                text: "Bienvenue"
+                font_size: 22
+            Label:
+                text: " Veuillez entrer votre mot de passe"
+                size_hint: (0.1,0.3) 
+            TextInput:
+                id: passw
+                text: ""
+                multiline: False
+                password: True
+                size_hint: (0.1,0.3)
+        Button:
+            text: "Entrer"
+            size_hint: (0.1,0.1)
+            on_release:
+                app.root.current= "Second" if passw.text=="driss" else "error"
+                root.manager.transition.direction ="up"
+
+<SecondWindow>:
+    name: "Second"
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:2
+            Image:
+                source:"attoumi.png"
+            Label:
+                text:"welcome in  programmation"
+        GridLayout:
+            cols:2
+            rows:3
+            Button:
+                text:"python"
+                size_hint:(0.1,0.1)
+                on_release: 
+                    app.root.current= "python"
+                    root.manager.transition.direction = "down"
+            Button:
+                text:"Java"
+                size_hint:(0.1,0.1)
+                on_release: 
+                    app.root.current= "java"
+                    root.manager.transition.direction = "down"
+            Button:
+                text:"Php"
+                size_hint:(0.1,0.1)
+                on_release: 
+                    app.root.current= "Php"
+                    root.manager.transition.direction = "down"
+            Button:
+                text:"sql"
+                size_hint:(0.1,0.1)
+                on_release: 
+                    app.root.current= "sql"
+                    root.manager.transition.direction = "down"
+            Button:
+                text:"html"
+                size_hint:(0.1,0.1)
+                on_release: 
+                    app.root.current= "html"
+                    root.manager.transition.direction = "down"
+            Button:
+                text:"css"
+                size_hint:(0.1,0.1)
+                on_release: 
+                    app.root.current= "css"
+                    root.manager.transition.direction = "down"
+        Button:
+            text: "go back"
+            size_hint: (0.1,0.3)
+            on_release:
+                app.root.current= "main"
+                root.manager.transition.direction = "down"
+<Error>:
+    name:"error"
+    GridLayout:
+        cols:1
+        rows:2
+        Label:
+            text:"password incorrect!"   
+    Button:
+        text: "try again"
+        size_hint:(1,0.1) 
+        on_release: 
+            app.root.current= "main"   
+
+<Python>:
+    name: "python"
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source: "py.jpg"
+        Label:
+            text:"learn python?"   
+    Button:
+        text: "go back"
+        size_hint: (1,0.1)
+        on_release:
+            app.root.current= "Second"
+
+<Php>:
+    name:"Php"
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source:"x.jpg"
+        Label:
+            text:"learn Php?"   
+    Button:
+        text: "go back"
+        size_hint: (1,0.1)
+        on_release:
+            app.root.current= "Second"
+
+<Html>:
+    name:"html"
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source:"HTML.png"
+        Label:
+            text:"learn Html?"   
+    Button:
+        text: "go back"
+        size_hint: (1,0.1)
+        on_release:
+            app.root.current= "Second"            
+<Java>:
+    name:"java"
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source:"jv.jpg"
+        Label:
+            text:"learn Java?"   
+    Button:
+        text: "go back"
+        size_hint: (1,0.1)
+        on_release:
+            app.root.current= "Second"         
+
+<Sql>:
+    name:"sql"
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source:"sql.png"
+        Label:
+            text:"learn Sql?"   
+    Button:
+        text: "go back"
+        size_hint: (1,0.1)
+        on_release:
+            app.root.current= "Second"                
+                
+<Css>:
+    name:"css"
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source:"css.png"
+        Label:
+            text:"learn Css?"   
+    Button:
+        text: "go back"
+        size_hint: (1,0.1)
+        on_release:
+            app.root.current=  "Second"      
